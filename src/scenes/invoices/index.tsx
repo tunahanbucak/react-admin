@@ -41,11 +41,13 @@ export default function Invoices() {
   ];
 
   return (
-    <Box m="20px">
+    <Box
+      sx={{
+        m: "20px",
+      }}
+    >
       <Header title="INVOICES" subtitle="List of Invoice Balances" />
       <Box
-        m="40px 0 0 0"
-        height="75vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -70,9 +72,18 @@ export default function Invoices() {
           "& .MuiCheckbox-root": {
             color: `${colors.greenAccent[200]} !important`,
           },
+          m: "40px 0 0 0",
+          height: "75vh",
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataInvoices} columns={columns} />
+        <DataGrid
+          checkboxSelection
+          rows={mockDataInvoices}
+          columns={columns}
+          components={{
+            Pagination: () => null,
+          }}
+        />
       </Box>
     </Box>
   );

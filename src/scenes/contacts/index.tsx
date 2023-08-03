@@ -8,7 +8,6 @@ import { useTheme } from "@mui/material";
 export default function Contacts() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID", flex: 0.5 },
     { field: "registrarId", headerName: "Registrar ID" },
@@ -53,14 +52,16 @@ export default function Contacts() {
   ];
 
   return (
-    <Box m="20px">
+    <Box
+      sx={{
+        m: "20px",
+      }}
+    >
       <Header
         title="CONTACTS"
         subtitle="List of Contacts for Future Reference"
       />
       <Box
-        m="40px 0 0 0"
-        height="75vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -88,12 +89,17 @@ export default function Contacts() {
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
             color: `${colors.grey[100]} !important`,
           },
+          m: "40px 0 0 0",
+          height: "75vh",
         }}
       >
         <DataGrid
           rows={mockDataContacts}
           columns={columns}
-          components={{ Toolbar: GridToolbar }}
+          components={{
+            Toolbar: GridToolbar,
+            Pagination: () => null,
+          }}
         />
       </Box>
     </Box>

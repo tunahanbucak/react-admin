@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
@@ -15,23 +14,23 @@ export default function Team() {
     { field: "id", headerName: "ID", width: 100 },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "İsim",
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
       field: "age",
-      headerName: "Age",
+      headerName: "Yaş",
       type: "number",
       headerAlign: "left",
       align: "left",
       width: 120,
     },
-    { field: "phone", headerName: "Phone Number", flex: 1 },
+    { field: "phone", headerName: "Telefon Numarası", flex: 1 },
     { field: "email", headerName: "Email", flex: 1 },
     {
       field: "access",
-      headerName: "Access Level",
+      headerName: "Erişim Düzeyi",
       flex: 1,
       renderCell: ({ row }) => {
         const { access } = row;
@@ -41,6 +40,7 @@ export default function Team() {
               width: "60%",
               m: "0 auto",
               p: "5px",
+              ml: 1,
               display: "flex",
               justifyContent: "center",
               backgroundColor:
@@ -62,12 +62,23 @@ export default function Team() {
     },
   ];
   return (
-    <Box m="20px">
-      <Header title="TEAM" subtitle="Managing the Team Members" />
+    <Box
+      sx={{
+        m: "20px",
+      }}
+    >
       <Box
-        m="40px 0 0 0"
-        height="75vh"
         sx={{
+          mt: -2,
+        }}
+      >
+        <Header title="TEAM" subtitle="Managing the Team Members" />
+      </Box>
+      <Box
+        sx={{
+          m: "40px 0 0 0",
+          height: "75vh",
+
           "& .MuiDataGrid-root": {
             border: "none",
           },
@@ -93,7 +104,14 @@ export default function Team() {
           },
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
+        <DataGrid
+          checkboxSelection
+          rows={mockDataTeam}
+          columns={columns}
+          components={{
+            Pagination: () => null,
+          }}
+        />
       </Box>
     </Box>
   );

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Sidebar as ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
@@ -15,7 +15,6 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-
 interface ItemProps {
   title: string;
   to: string;
@@ -23,7 +22,6 @@ interface ItemProps {
   selected: string;
   setSelected: React.Dispatch<React.SetStateAction<string>>;
 }
-
 const Item: React.FC<ItemProps> = ({
   title,
   to,
@@ -33,7 +31,6 @@ const Item: React.FC<ItemProps> = ({
 }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
   return (
     <NavLink
       to={to}
@@ -45,6 +42,7 @@ const Item: React.FC<ItemProps> = ({
         active={selected === title}
         style={{
           color: colors.grey[100],
+          background: selected === title ? colors.primary[400] : "transparent",
         }}
         onClick={() => setSelected(title)}
         icon={icon}
@@ -55,7 +53,7 @@ const Item: React.FC<ItemProps> = ({
   );
 };
 
-const Sidebar = () => {
+export default function SideBar() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -79,27 +77,35 @@ const Sidebar = () => {
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
         },
+        "& .pro-sidebar-inner h3": {
+          color: colors.grey[400],
+        },
       }}
     >
-      <ProSidebar collapsed={isCollapsed}>
+      <ProSidebar collapsed={isCollapsed} backgroundColor="colors.grey[100]">
         <Menu>
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
+            active={selected === "ADMINIS"}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: "10px 0 20px 0",
-              color: colors.grey[100],
+              color: colors.grey[400],
+              background:
+                selected === "ADMINIS" ? colors.primary[400] : "transparent",
             }}
           >
             {!isCollapsed && (
               <Box
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                ml="15px"
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  ml: "15px",
+                }}
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  YÖNETİCİ
+                  ADMINIS
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -107,10 +113,19 @@ const Sidebar = () => {
               </Box>
             )}
           </MenuItem>
-
           {!isCollapsed && (
-            <Box mb="25px">
-              <Box display="flex" justifyContent="center" alignItems="center">
+            <Box
+              sx={{
+                mb: "25px",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
                 <img
                   alt="profile-user"
                   width="100px"
@@ -119,22 +134,32 @@ const Sidebar = () => {
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
-              <Box textAlign="center">
+              <Box
+                sx={{
+                  textAlign: "center",
+                }}
+              >
                 <Typography
                   variant="h2"
-                  color={colors.grey[100]}
-                  fontWeight="bold"
-                  sx={{ m: "10px 0 0 0" }}
+                  sx={{
+                    m: "10px 0 0 0",
+                    fontWeight: "bold",
+                    color: colors.grey[100],
+                  }}
                 >
-                  Ed Roh
+                  Anya Stark
                 </Typography>
-                <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VP Fancy Admin
+                <Typography
+                  variant="h5"
+                  sx={{
+                    color: colors.greenAccent[500],
+                  }}
+                >
+                  VP ADMIN
                 </Typography>
               </Box>
             </Box>
           )}
-
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
               title="Dashboard"
@@ -146,8 +171,10 @@ const Sidebar = () => {
 
             <Typography
               variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
+              sx={{
+                m: "15px 0 5px 20px",
+                color: colors.grey[300],
+              }}
             >
               Data
             </Typography>
@@ -175,8 +202,10 @@ const Sidebar = () => {
 
             <Typography
               variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
+              sx={{
+                m: "15px 0 5px 20px",
+                color: colors.grey[300],
+              }}
             >
               Pages
             </Typography>
@@ -204,8 +233,10 @@ const Sidebar = () => {
 
             <Typography
               variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
+              sx={{
+                m: "15px 0 5px 20px",
+                color: colors.grey[300],
+              }}
             >
               Charts
             </Typography>
@@ -242,6 +273,4 @@ const Sidebar = () => {
       </ProSidebar>
     </Box>
   );
-};
-
-export default Sidebar;
+}

@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was published [here](https://react-admin-e98e5.web.app/).
+This project was published [here](https://dashboard-admin-64d5e.web.app).
 
 ## Available Scripts
 

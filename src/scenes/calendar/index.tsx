@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
+import { useTranslation } from "react-i18next";
 
 interface Event {
   id: string;
@@ -27,9 +28,10 @@ export default function Calendar() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState<Event[]>([]);
+  const { t } = useTranslation();
 
   const handleDateClick = (info: { dateStr: string }) => {
-    const title = prompt("Please enter a new title for your event");
+    const title = prompt(t("calendar.newTitle"));
     if (title) {
       const newEvent: Event = {
         id: `${info.dateStr}-${title}`,
@@ -44,9 +46,7 @@ export default function Calendar() {
 
   const handleEventClick = (info: { event: EventApi }) => {
     if (
-      window.confirm(
-        `Are you sure you want to delete the event '${info.event.title}'`
-      )
+      window.confirm(t("calendar.deleteEvent", { title: info.event.title }))
     ) {
       setCurrentEvents((prevEvents) =>
         prevEvents.filter((event) => event.id !== info.event.id)
@@ -61,7 +61,7 @@ export default function Calendar() {
         m: "20px",
       }}
     >
-      <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
+      <Header title={t("calendar.title")} subtitle={t("calendar.subtitle")} />
       <Box
         sx={{
           display: "flex",
@@ -76,7 +76,7 @@ export default function Calendar() {
             borderRadius: "4px",
           }}
         >
-          <Typography variant="h5">Events</Typography>
+          <Typography variant="h5">{t("calendar.events")}</Typography>
           <List>
             {currentEvents.map((event) => (
               <ListItem

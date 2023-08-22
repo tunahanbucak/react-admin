@@ -6,31 +6,33 @@ import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
+import { useTranslation } from "react-i18next";
 
 export default function Team() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const { t } = useTranslation();
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID", width: 100 },
     {
       field: "name",
-      headerName: "İsim",
+      headerName: t("team.name"),
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
       field: "age",
-      headerName: "Yaş",
+      headerName: t("team.age"),
       type: "number",
       headerAlign: "left",
       align: "left",
       width: 120,
     },
-    { field: "phone", headerName: "Telefon Numarası", flex: 1 },
-    { field: "email", headerName: "Email", flex: 1 },
+    { field: "phone", headerName: t("team.phone"), flex: 1 },
+    { field: "email", headerName: t("team.email"), flex: 1 },
     {
       field: "access",
-      headerName: "Erişim Düzeyi",
+      headerName: t("team.access"),
       flex: 1,
       renderCell: ({ row }) => {
         const { access } = row;
@@ -72,7 +74,7 @@ export default function Team() {
           mt: -2,
         }}
       >
-        <Header title="TEAM" subtitle="Managing the Team Members" />
+        <Header title={t("team.title")} subtitle={t("team.subtitle")} />
       </Box>
       <Box
         sx={{

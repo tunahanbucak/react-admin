@@ -1,0 +1,121 @@
+{
+  "dashboard": {
+    "title": "Gösterge Paneli",
+    "subtitle": "Gösterge panelinize hoş geldiniz",
+    "downloadReport": "Raporları İndir",
+    "revenueGenerated": "Elde Edilen Gelir",
+    "emailsSent": "Gönderilen E-postalar",
+    "salesObtained": "Elde Edilen Satışlar ",
+    "newClients": "Yeni Müşteriler",
+    "trafficReceived": "Alınan Trafik",
+    "recentTransactions": "Son İşlemler",
+    "campaign": "Kampanya",
+    "revenue": "48,352 $ gelir elde edildi",
+    "extra": "Ekstra çeşitli harcamaları ve maliyetleri içerir",
+    "salesQuantity": "Satış miktarı",
+    "basedTraffic": "Coğrafya Bazlı Trafik"
+  },
+
+  "sideBar": {
+    "adminis": "YÖNETİCİLER",
+    "admin": "Yönetici",
+    "dashboard": "Gösterge Paneli",
+    "data": "Veri",
+    "manageTeam": "Ekibi Yönet",
+    "contactsInformation": "İletişim Bilgileri",
+    "invoicesBalances": "Fatura Bakiyeleri",
+    "pages": "Sayfalar",
+    "profileForm": "Profil Formu",
+    "calendar": "Takvim",
+    "faqPage": "Soru Sayfası",
+    "charts": "Grafikler",
+    "barChart": "Sütun Grafiği",
+    "pieChart": "Pasta Grafiği",
+    "lineChart": "Çizgi Grafiği",
+    "geographyChart": "Coğrafya Tablosu"
+  },
+
+  "bar": {
+    "title": "Sütun Grafiği"
+  },
+
+  "calendar": {
+    "title": "Takvim",
+    "subtitle": "Tam Takvim Etkileşimli Sayfa",
+    "newTitle": "Lütfen etkinliğiniz için yeni bir başlık girin",
+    "deleteEvent": "Etkinliği silmek istediğinizden emin misiniz? ",
+    "events": "Olaylar"
+  },
+
+  "contacts": {
+    "registerId": "Kayıt Kimliği",
+    "name": "İsim",
+    "age": "Yaş",
+    "phoneNumber": "Telefon Numarası",
+    "email": "E-posta",
+    "address": "Adres",
+    "city": "Şehir",
+    "zipCode": "Posta Kodu",
+    "title": "İletişim",
+    "subtitle": "Referans İçin Kişi Listesi"
+  },
+
+  "form": {
+    "title": "KULLANICI OLUŞTUR ",
+    "subtitle": "Yeni Bir Kullanıcı Profili Oluşturun",
+    "firstName": "İsim",
+    "lastName": "Soyİsim",
+    "email": "E-posta",
+    "contactNumber": " İletişim Numarası",
+    "address1": "Adres 1",
+    "address2": "Adres 2",
+    "newUser": "Yeni Kullanıcı Oluştur"
+  },
+
+  "geography": {
+    "title": "Coğrafya",
+    "subtitle": "Basit Coğrafya Şeması"
+  },
+
+  "team": {
+    "title": "EKİP",
+    "subtitle": "Ekip Üyelerini Yönetme",
+    "name": "İsim",
+    "age": "Yaş",
+    "phone": "Telefon Numarası",
+    "email": "E-posta",
+    "access": "Erişim Düzeyi"
+  },
+
+  "invoices": {
+    "title": "FATURALAR",
+    "subtitle": "Fatura Bakiye Listesi",
+    "name": "İsim",
+    "phone": "Telefon Numarası",
+    "email": "E-posta",
+    "cost": "Maliyet",
+    "date": "Tarih"
+  },
+
+  "faq": {
+    "title": "SORU",
+    "subtitle": "Sıkça Sorulan Sorular Sayfası",
+    "accordionSummary": "Önemli Soru",
+    "accordionSummary1": "Bir Diğer Önemli Soru",
+    "accordionSummary2": "En sevdiğin Soru",
+    "accordionSummary3": "Rastgele Bir Soru",
+    "accordionSummary4": "Son Soru"
+  },
+
+  "topBar": {
+    "placeHolder": "Ara"
+  },
+
+  "pie": {
+    "title": "Pasta Grafiği"
+  },
+
+  "line": {
+    "title": "Çizgi Grafiği"
+  }
+}

@@ -1,5 +1,13 @@
-import { Box, IconButton, useTheme, Theme } from "@mui/material";
-import { useContext } from "react";
+import React, { useContext } from "react";
+import {
+  Box,
+  IconButton,
+  useTheme,
+  Theme,
+  MenuItem,
+  FormControl,
+  Select,
+} from "@mui/material";
 import { ColorModeContext, tokens } from "../../theme";
 import InputBase from "@mui/material/InputBase";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
@@ -8,11 +16,22 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import { useTranslation } from "react-i18next";
+import { SelectChangeEvent } from "@mui/material";
 
+const languages = [
+  { code: "en", label: "English", flag: "en" },
+  { code: "tr", label: "Türkçe", flag: "tr" },
+];
 export default function TopBar() {
+  const { i18n } = useTranslation();
   const theme = useTheme<Theme>();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
+  const handleLanguageChange = (event: SelectChangeEvent) => {
+    const selectedLanguage = event.target.value as string;
+    i18n.changeLanguage(selectedLanguage);
+  };
   return (
     <Box
       sx={{
@@ -36,8 +55,27 @@ export default function TopBar() {
       <Box
         sx={{
           display: "flex",
+          alignItems: "center",
         }}
       >
+        <FormControl>
+          <Select
+            value={i18n.language}
+            onChange={handleLanguageChange}
+            label="Language"
+          >
+            {languages.map((lang) => (
+              <MenuItem key={lang.code} value={lang.code}>
+                <img
+                  src={`./assets/flags/${lang.flag}.png`}
+                  alt={lang.label}
+                  style={{ width: "22px", marginRight: "8px" }}
+                />
+                {lang.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
         <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === "dark" ? (
             <DarkModeOutlinedIcon />

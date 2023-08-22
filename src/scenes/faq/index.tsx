@@ -5,10 +5,12 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
+import { useTranslation } from "react-i18next";
 
 export default function FAQ() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -16,7 +18,7 @@ export default function FAQ() {
         m: "20px",
       }}
     >
-      <Header title="FAQ" subtitle="Sıkça Sorulan Sorular Sayfası" />
+      <Header title={t("faq.title")} subtitle={t("faq.subtitle")} />
       <Accardion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography
@@ -25,7 +27,7 @@ export default function FAQ() {
               color: colors.greenAccent[500],
             }}
           >
-            Önemli bir soru
+            {t("faq.accordionSummary")}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -43,7 +45,7 @@ export default function FAQ() {
               color: colors.greenAccent[500],
             }}
           >
-            Bir diğer önemli bir soru
+            {t("faq.accordionSummary1")}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -61,7 +63,7 @@ export default function FAQ() {
               color: colors.greenAccent[500],
             }}
           >
-            En sevdiğin soru
+            {t("faq.accordionSummary2")}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -79,8 +81,7 @@ export default function FAQ() {
               color: colors.greenAccent[500],
             }}
           >
-            {" "}
-            Rastgele bir soru
+            {t("faq.accordionSummary3")}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -98,7 +99,7 @@ export default function FAQ() {
               color: colors.greenAccent[500],
             }}
           >
-            Son soru
+            {t("faq.accordionSummary4")}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>

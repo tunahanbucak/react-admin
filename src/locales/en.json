@@ -1,0 +1,121 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Welcome to your dashboard",
+    "downloadReport": " Download Report",
+    "revenueGenerated": "Revenue Generated",
+    "emailsSent": "Emails Sent",
+    "salesObtained": "Sales Obtained",
+    "newClients": "New Clients",
+    "trafficReceived": " Traffic Received",
+    "recentTransactions": "Recent Transactions",
+    "campaign": "Campaign",
+    "revenue": "$48,352 revenue generated",
+    "extra": "Includes extra misc expenditures and costs",
+    "salesQuantity": "Sales Quantity",
+    "basedTraffic": "Geography Based Traffic"
+  },
+
+  "sideBar": {
+    "adminis": "ADMINIS",
+    "admin": "ADMIN",
+    "dashboard": "Dashboard",
+    "data": "Data",
+    "manageTeam": "Manage Team",
+    "contactsInformation": "Contacts Information",
+    "invoicesBalances": "Invoices Balances",
+    "pages": "Pages",
+    "profileForm": "Profile Form",
+    "calendar": "Calendar",
+    "faqPage": "Question Page",
+    "charts": "Charts",
+    "barChart": "Bar Chart",
+    "pieChart": "Pie Chart",
+    "lineChart": "Line Chart",
+    "geographyChart": "Geography Chart"
+  },
+
+  "bar": {
+    "title": "Bar Chart"
+  },
+
+  "calendar": {
+    "title": "Calendar",
+    "subtitle": "Full Calendar Interactive Page",
+    "newTitle": "Please enter a new title for your event",
+    "deleteEvent": "Are you sure you want to delete the event",
+    "events": "Events"
+  },
+
+  "contacts": {
+    "registerId": "Register ID",
+    "name": "Name",
+    "age": "Age",
+    "phoneNumber": "Phone Number",
+    "email": "Email",
+    "address": "Address",
+    "city": "City",
+    "zipCode": "Zip Code",
+    "title": "Contacts",
+    "subtitle": "List of Contacts for Future Reference"
+  },
+
+  "form": {
+    "title": "CREATE USER",
+    "subtitle": "Create a New User Profile",
+    "firstName": "Firts Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "contactNumber": "Contact Number",
+    "address1": "Address 1",
+    "address2": "Address 2",
+    "newUser": "Create New User"
+  },
+
+  "geography": {
+    "title": "Geography",
+    "subtitle": "Simple Geography Chart"
+  },
+
+  "team": {
+    "title": "TEAM",
+    "subtitle": "Managing the Team Members",
+    "name": "Name",
+    "age": "Age",
+    "phone": "Phone Number",
+    "email": "Email",
+    "access": "Access Level"
+  },
+
+  "invoices": {
+    "title": "INVOICES",
+    "subtitle": "List of Invoice Balances",
+    "name": "Name",
+    "phone": "Phone Number",
+    "email": "Email",
+    "cost": "Cost",
+    "date": "Date"
+  },
+
+  "faq": {
+    "title": "QUESTION",
+    "subtitle": "Frequently Asked Questions Page",
+    "accordionSummary": "Important Question",
+    "accordionSummary1": "Another Important Question",
+    "accordionSummary2": "Favorite Question ",
+    "accordionSummary3": "A Random Question ",
+    "accordionSummary4": "Last Question"
+  },
+
+  "topBar": {
+    "placeHolder": "Search"
+  },
+
+  "pie": {
+    "title": "Pie chart"
+  },
+
+  "line": {
+    "title": "Line chart"
+  }
+}

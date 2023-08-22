@@ -40,7 +40,7 @@ export default function BarChart({ isDashboard = false }: BarChartProps) {
           },
         },
       }}
-      keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
+      keys={["hotDog", "burger", "sandwich", "kebab", "fries", "sausage"]}
       indexBy="country"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
       padding={0.3}

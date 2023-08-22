@@ -12,8 +12,11 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import { useTranslation } from "react-i18next";
 
 export default function Dashboard() {
+  const { t } = useTranslation();
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
@@ -29,7 +32,10 @@ export default function Dashboard() {
           alignItems: "center",
         }}
       >
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header
+          title={t("dashboard.title")}
+          subtitle={t("dashboard.subtitle")}
+        />
         <Box>
           <Button
             sx={{
@@ -41,7 +47,7 @@ export default function Dashboard() {
             }}
           >
             <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-            Download Reports
+            {t("dashboard.downloadReport")}
           </Button>
         </Box>
       </Box>
@@ -64,7 +70,7 @@ export default function Dashboard() {
         >
           <StatBox
             title="12,361"
-            subtitle="Emails Sent"
+            subtitle={t("dashboard.emailsSent")}
             progress={0.75}
             increase="+14%"
             icon={
@@ -85,7 +91,7 @@ export default function Dashboard() {
         >
           <StatBox
             title="431,225"
-            subtitle="Sales Obtained"
+            subtitle={t("dashboard.salesObtained")}
             progress={0.5}
             increase="+21%"
             icon={
@@ -106,7 +112,7 @@ export default function Dashboard() {
         >
           <StatBox
             title="32,441"
-            subtitle="New Clients"
+            subtitle={t("dashboard.newClients")}
             progress={0.3}
             increase="+5%"
             icon={
@@ -127,7 +133,7 @@ export default function Dashboard() {
         >
           <StatBox
             title="1,325,134"
-            subtitle="Traffic Received"
+            subtitle={t("dashboard.trafficReceived")}
             progress={0.8}
             increase="+43%"
             icon={
@@ -161,7 +167,7 @@ export default function Dashboard() {
                   color: colors.grey[100],
                 }}
               >
-                Revenue Generated
+                {t("dashboard.revenueGenerated")}{" "}
               </Typography>
               <Typography
                 variant="h3"
@@ -215,7 +221,7 @@ export default function Dashboard() {
                 fontWeight: "600",
               }}
             >
-              Recent Transactions
+              {t("dashboard.recentTransactions")}
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -280,7 +286,7 @@ export default function Dashboard() {
               fontWeight: "600",
             }}
           >
-            Campaign
+            {t("dashboard.campaign")}
           </Typography>
           <Box
             sx={{
@@ -298,9 +304,9 @@ export default function Dashboard() {
                 color: colors.greenAccent[500],
               }}
             >
-              $48,352 revenue generated
+              {t("dashboard.revenue")}
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            <Typography>{t("dashboard.extra")}</Typography>
           </Box>
         </Box>
         <Box
@@ -317,7 +323,7 @@ export default function Dashboard() {
               fontWeight: "600",
             }}
           >
-            Sales Quantity
+            {t("dashboard.salesQuantity")}
           </Typography>
           <Box
             sx={{
@@ -343,7 +349,7 @@ export default function Dashboard() {
               fontWeight: "600",
             }}
           >
-            Geography Based Traffic
+            {t("dashboard.basedTraffic")}
           </Typography>
           <Box
             sx={{

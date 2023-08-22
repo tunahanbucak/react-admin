@@ -3,31 +3,33 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataInvoices } from "../../data/mockData";
 import Header from "../../components/Header";
+import { useTranslation } from "react-i18next";
 
 export default function Invoices() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const colors = tokens(theme.palette.mode);
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID", width: 100 },
     {
       field: "name",
-      headerName: "Name",
+      headerName: t("invoices.name"),
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
       field: "phone",
-      headerName: "Phone Number",
+      headerName: t("invoices.phone"),
       flex: 1,
     },
     {
       field: "email",
-      headerName: "Email",
+      headerName: t("invoices.email"),
       flex: 1,
     },
     {
       field: "cost",
-      headerName: "Cost",
+      headerName: t("invoices.cost"),
       flex: 1,
       renderCell: (params) => (
         <Typography color={colors.greenAccent[500]}>${params.value}</Typography>
@@ -35,7 +37,7 @@ export default function Invoices() {
     },
     {
       field: "date",
-      headerName: "Date",
+      headerName: t("invoices.date"),
       flex: 1,
     },
   ];
@@ -46,7 +48,7 @@ export default function Invoices() {
         m: "20px",
       }}
     >
-      <Header title="INVOICES" subtitle="List of Invoice Balances" />
+      <Header title={t("invoices.title")} subtitle={t("invoices.subtitle")} />
       <Box
         sx={{
           "& .MuiDataGrid-root": {

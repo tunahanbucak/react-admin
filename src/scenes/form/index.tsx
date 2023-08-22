@@ -1,8 +1,9 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { Formik, FormikHelpers, FormikValues } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
+import { useTranslation } from "react-i18next";
 
 interface FormValues {
   firstName: string;
@@ -45,6 +46,7 @@ export default function Form() {
     console.log(values);
     setSubmitting(false);
   };
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -52,7 +54,7 @@ export default function Form() {
         m: "20px",
       }}
     >
-      <Header title="CREATE USER" subtitle="Create a New User Profile" />
+      <Header title={t("form.title")} subtitle={t("form.subtitle")} />
       <Formik
         onSubmit={handleFormSubmit}
         initialValues={initialValues}
@@ -83,7 +85,7 @@ export default function Form() {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="First Name"
+                label={t("form.firstName")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.firstName}
@@ -96,7 +98,7 @@ export default function Form() {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Last Name"
+                label={t("form.lastName")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.lastName}
@@ -109,7 +111,7 @@ export default function Form() {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Email"
+                label={t("form.email")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.email}
@@ -122,7 +124,7 @@ export default function Form() {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Contact Number"
+                label={t("form.contactNumber")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.contact}
@@ -135,7 +137,7 @@ export default function Form() {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label={t("form.address1")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address1}
@@ -148,7 +150,7 @@ export default function Form() {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 2"
+                label={t("form.address2")}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.address2}
@@ -171,7 +173,13 @@ export default function Form() {
                 variant="contained"
                 disabled={isSubmitting}
               >
-                Create New User
+                <Typography
+                  sx={{
+                    textTransform: "none",
+                  }}
+                >
+                  {t("form.newUser")}
+                </Typography>
               </Button>
             </Box>
           </form>

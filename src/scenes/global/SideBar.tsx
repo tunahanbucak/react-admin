@@ -15,6 +15,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import { useTranslation } from "react-i18next";
 interface ItemProps {
   title: string;
   to: string;
@@ -57,7 +58,8 @@ export default function SideBar() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selected, setSelected] = useState("Dashboard");
+  const [selected, setSelected] = useState("");
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -105,7 +107,7 @@ export default function SideBar() {
                 }}
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  ADMINIS
+                  {t("sideBar.adminis")}
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -147,7 +149,7 @@ export default function SideBar() {
                     color: colors.grey[100],
                   }}
                 >
-                  Anya Stark
+                  Jon SNOW
                 </Typography>
                 <Typography
                   variant="h5"
@@ -155,14 +157,14 @@ export default function SideBar() {
                     color: colors.greenAccent[500],
                   }}
                 >
-                  VP ADMIN
+                  {t("sideBar.admin")}
                 </Typography>
               </Box>
             </Box>
           )}
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
-              title="Dashboard"
+              title={t("sideBar.dashboard")}
               to="/"
               icon={<HomeOutlinedIcon />}
               selected={selected}
@@ -176,24 +178,24 @@ export default function SideBar() {
                 color: colors.grey[300],
               }}
             >
-              Data
+              {t("sideBar.data")}
             </Typography>
             <Item
-              title="Manage Team"
+              title={t("sideBar.manageTeam")}
               to="/team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Contacts Information"
+              title={t("sideBar.contactsInformation")}
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Invoices Balances"
+              title={t("sideBar.invoicesBalances")}
               to="/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
@@ -207,24 +209,24 @@ export default function SideBar() {
                 color: colors.grey[300],
               }}
             >
-              Pages
+              {t("sideBar.pages")}
             </Typography>
             <Item
-              title="Profile Form"
+              title={t("sideBar.profileForm")}
               to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Calendar"
+              title={t("sideBar.calendar")}
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="FAQ Page"
+              title={t("sideBar.faqPage")}
               to="/faq"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
@@ -238,31 +240,31 @@ export default function SideBar() {
                 color: colors.grey[300],
               }}
             >
-              Charts
+              {t("sideBar.charts")}
             </Typography>
             <Item
-              title="Bar Chart"
+              title={t("sideBar.barChart")}
               to="/bar"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Pie Chart"
+              title={t("sideBar.pieChart")}
               to="/pie"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Line Chart"
+              title={t("sideBar.lineChart")}
               to="/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Geography Chart"
+              title={t("sideBar.geographyChart")}
               to="/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}

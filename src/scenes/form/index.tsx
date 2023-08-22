@@ -155,8 +155,6 @@ export default function Form() {
                 onChange={handleChange}
                 value={values.address2}
                 name="address2"
-                error={touched.address2 && !!errors.address2}
-                helperText={touched.address2 && errors.address2}
                 sx={{ gridColumn: "span 4" }}
               />
             </Box>

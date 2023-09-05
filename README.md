@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Canlı Proje : [here](https://dashboard-admin-64d5e.web.app).
+Canlı Proje : (https://dashboard-admin-64d5e.web.app).
 
 ## Available Scripts
 

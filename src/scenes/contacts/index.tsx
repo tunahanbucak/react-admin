@@ -1,58 +1,10 @@
 import { Box } from "@mui/material";
-import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
-import { tokens } from "../../theme";
-import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
-import { useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import ContactsInformation from "../../components/ContactsInformation";
 
 export default function Contacts() {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
   const { t } = useTranslation();
-
-  const columns: GridColDef[] = [
-    { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: t("contacts.registerId") },
-    {
-      field: "name",
-      headerName: t("contacts.name"),
-      flex: 1,
-      cellClassName: "name-column--cell",
-    },
-    {
-      field: "age",
-      headerName: t("contacts.age"),
-      type: "number",
-      headerAlign: "left",
-      align: "left",
-    },
-    {
-      field: "phone",
-      headerName: t("contacts.phoneNumber"),
-      flex: 1,
-    },
-    {
-      field: "email",
-      headerName: t("contacts.email"),
-      flex: 1,
-    },
-    {
-      field: "address",
-      headerName: t("contacts.address"),
-      flex: 1,
-    },
-    {
-      field: "city",
-      headerName: t("contacts.city"),
-      flex: 1,
-    },
-    {
-      field: "zipCode",
-      headerName: t("contacts.zipCode"),
-      flex: 1,
-    },
-  ];
 
   return (
     <Box
@@ -61,7 +13,7 @@ export default function Contacts() {
       }}
     >
       <Header title={t("contacts.title")} subtitle={t("contacts.subtitle")} />
-      <Box
+      {/* <Box
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -101,7 +53,8 @@ export default function Contacts() {
             Pagination: () => null,
           }}
         />
-      </Box>
+      </Box> */}
+      <ContactsInformation />
     </Box>
   );
 }

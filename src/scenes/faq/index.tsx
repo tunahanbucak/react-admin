@@ -6,6 +6,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
 import { useTranslation } from "react-i18next";
+import Question from "../../components/Question";
 
 export default function FAQ() {
   const theme = useTheme();
@@ -19,7 +20,7 @@ export default function FAQ() {
       }}
     >
       <Header title={t("faq.title")} subtitle={t("faq.subtitle")} />
-      <Accardion defaultExpanded>
+      {/* <Accardion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography
             variant="h5"
@@ -108,7 +109,8 @@ export default function FAQ() {
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
         </AccordionDetails>
-      </Accardion>
+      </Accardion> */}
+      <Question />
     </Box>
   );
 }

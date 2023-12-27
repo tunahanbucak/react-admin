@@ -149,7 +149,7 @@ export default function SideBar() {
                     color: colors.grey[100],
                   }}
                 >
-                  Jon SNOW
+                  Mark Zuckerberg
                 </Typography>
                 <Typography
                   variant="h5"

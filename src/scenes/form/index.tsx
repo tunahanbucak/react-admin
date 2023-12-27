@@ -4,6 +4,7 @@ import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
 import { useTranslation } from "react-i18next";
+import ProfileForm from "../../components/ProfileForm";
 
 interface FormValues {
   firstName: string;
@@ -55,7 +56,7 @@ export default function Form() {
       }}
     >
       <Header title={t("form.title")} subtitle={t("form.subtitle")} />
-      <Formik
+      {/* <Formik
         onSubmit={handleFormSubmit}
         initialValues={initialValues}
         validationSchema={checkoutSchema}
@@ -182,7 +183,8 @@ export default function Form() {
             </Box>
           </form>
         )}
-      </Formik>
+      </Formik> */}
+      <ProfileForm />
     </Box>
   );
 }

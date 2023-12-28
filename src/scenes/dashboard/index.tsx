@@ -16,7 +16,6 @@ import { useTranslation } from "react-i18next";
 
 export default function Dashboard() {
   const { t } = useTranslation();
-
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (

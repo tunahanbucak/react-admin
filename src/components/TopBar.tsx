@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import {
   Box,
   IconButton,
@@ -8,7 +8,6 @@ import {
   FormControl,
   Select,
 } from "@mui/material";
-import { ColorModeContext, tokens } from "../../theme";
 import InputBase from "@mui/material/InputBase";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -18,6 +17,7 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { useTranslation } from "react-i18next";
 import { SelectChangeEvent } from "@mui/material";
+import { ColorModeContext, tokens } from "../theme";
 
 const languages = [
   { code: "en", label: "English", flag: "en" },

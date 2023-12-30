@@ -1,14 +1,12 @@
 import { Box } from '@mui/material'
 import React from 'react'
-import SideBar from '../scenes/global/SideBar'
-import TopBar from '../scenes/global/TopBar'
+import TopBar from './TopBar'
+import SideBar from './SideBar'
 
 type LayoutProps = {
     children: React.ReactNode
 }
-
 export default function Layout({ children }: LayoutProps) {
-
     return (
         <Box
             sx={{
@@ -26,7 +24,6 @@ export default function Layout({ children }: LayoutProps) {
             >
                 <TopBar />
                 {children}
-
             </Box>
         </Box>
     )

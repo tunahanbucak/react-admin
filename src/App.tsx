@@ -2,7 +2,6 @@ import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Theme } from "@mui/material/styles";
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "./scenes/dashboard";
 import Contacts from "./views/Contacts";
 import Form from "./views/Form";
 import FAQ from "./views/FAQ";
@@ -14,6 +13,7 @@ import Calendar from "./views/Calendar";
 import Team from "./views/Team";
 import Invoices from "./views/Invoices";
 import Layout from "./components/Layout";
+import Dashboard from "./views/Dashboard";
 
 function App() {
   const [theme, colorMode] = useMode();
